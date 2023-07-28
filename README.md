@@ -18,7 +18,7 @@ Then, most of the SDK functionalities can be used after setting the access token
 Example code to log in and list users:
 
 
-```
+```typescript
 import { Configuration } from './typescript/runtime';
 import { AuthenticationApi, LoginRequest } from './typescript/AuthenticationApi';
 import { UsersApi } from './typescript/UsersApi';
@@ -47,7 +47,7 @@ const listUsersRes = await userAPI.listUser();
 
 Another example to create an application. this example creates an application called ```testapplication``` among with a basic component
 
-```
+```typescript
 import { Configuration } from './typescript/runtime';
 import { AuthenticationApi, LoginRequest } from './typescript/AuthenticationApi';
 import { UsersApi } from './typescript/UsersApi';
@@ -60,6 +60,8 @@ const configuration = new Configuration({
 })
 const authAPI = new AuthenticationApi(configuration)
 const userAPI = new UsersApi(configuration)
+const applicationAPI = new ApplicationApi(configuration)
+
 
 const loginRequestParam: LoginRequest = {
     body: {
