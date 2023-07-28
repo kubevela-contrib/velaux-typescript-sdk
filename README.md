@@ -1,15 +1,26 @@
 # velaux-typescript-sdk
-Typescript SDK for VelaUX
 
-# About This Repo
-source code of the SDK is located in ```typescript/``` directory.
+# About
 
-The typescript SDK is generated using OpenAPI generator from the [```swagger.json``` file](https://github.com/kubevela/velaux/blob/main/docs/apidoc/swagger.json) in the ```velaux``` repo.
+This repo is TypeScript SDK for [VelaUX](https://github.com/kubevela/velaux).
+
+## Directory Structure
+
+Source code is located in ```typescript/``` directory.
 
 Example code can be found in the ```examples/``` directory, where a Jest test is used to test the basic operations of ```application```, ```target```, ```env```, and ```project``` of the SDK.
 
-# Usage
-a ```Configuration``` object is needed to contain information about the requests
+# Quick Start
+
+## Installation
+
+```shell
+npm i velaux-typescript-sdk
+```
+
+## Usage
+
+A ```Configuration``` object is needed to contain information about the requests
 
 After creating the ```Configuration``` object, To use most of the SDK features, an access token is needed. To get an access token, log in and the response will contain access token. Then, set the ```access_token``` field in the ```Configuration``` object mentioned above.
 
@@ -22,9 +33,6 @@ Example code to log in and list users:
 import { Configuration } from './typescript/runtime';
 import { AuthenticationApi, LoginRequest } from './typescript/AuthenticationApi';
 import { UsersApi } from './typescript/UsersApi';
-
-
-
 
 const configuration = new Configuration({
     basePath: 'http://127.0.0.1:8000',
@@ -52,9 +60,6 @@ import { Configuration } from './typescript/runtime';
 import { AuthenticationApi, LoginRequest } from './typescript/AuthenticationApi';
 import { UsersApi } from './typescript/UsersApi';
 
-
-
-
 const configuration = new Configuration({
     basePath: 'http://127.0.0.1:8000',
 })
@@ -69,7 +74,6 @@ const loginRequestParam: LoginRequest = {
         "password": "VelaUX12345"
     }
 }
-
 
 const loginRes = await authAPI.logi(loginRequestParam);
 configuration.accessToken = loginRes.accessToken;
@@ -90,4 +94,8 @@ console.log(res)
 
 
 ```
+
+# Credit
+
+Give full credit to authors of [OpenAPI Generator](https://openapi-generator.tech/) which play an important role in the SDK generating process. The typescript SDK is generated using OpenAPI generator from the [`swagger.json` file](https://github.com/kubevela/velaux/blob/main/docs/apidoc/swagger.json) in the `velaux` repo.
 
