@@ -2,14 +2,11 @@
 Typescript SDK for VelaUX
 
 # About This Repo
-source code of the SDK is located in ```typescript/``` directory.
 
 The typescript SDK is generated using OpenAPI generator from the [```swagger.json``` file](https://github.com/kubevela/velaux/blob/main/docs/apidoc/swagger.json) in the ```velaux``` repo.
 
-Example code can be found in the ```examples/``` directory, where a Jest test is used to test the basic operations of ```application```, ```target```, ```env```, and ```project``` of the SDK.
-
 # Usage
-a ```Configuration``` object is needed to contain information about the requests
+First, create a ```Configuration``` object to contain  information about the requests, such as access_token and base URL to send requests to
 
 After creating the ```Configuration``` object, To use most of the SDK features, an access token is needed. To get an access token, log in and the response will contain access token. Then, set the ```access_token``` field in the ```Configuration``` object mentioned above.
 
